@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+
+package flawfinder_plugin;
+
+service flawfinder{
+    rpc execute(File) returns (Analysis_Report) {}
+}
+
+message File{
+    string Data = 1;
+}
+
+message Analysis_Report{
+    string json = 1;
+    string msg = 2;
+}
+
